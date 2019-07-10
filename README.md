@@ -1,6 +1,6 @@
 # TextMiningR
 This repository is the beginner's collection of methods for analyzing texts in scientific journals. 
-- quanteda: An R package for the quantitative analysis oftextual data
+- quanteda: An R package for the quantitative analysis of textual data
   https://www.theoj.org/joss-papers/joss.00774/10.21105.joss.00774.pdf
  
 - Text mining with R 
