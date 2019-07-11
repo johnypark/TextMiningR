@@ -15,4 +15,6 @@ This repository is the beginner's collection of methods for analyzing texts in s
 - rcrossref https://github.com/ropensci/rcrossref
 
 ## First lesson 
-
+7/11/2019
+- https://github.com/johnypark/TextMiningR/blob/master/FirstLesson.md
+- Issue only getting 20 entries of journal titles, but want to get all. 
