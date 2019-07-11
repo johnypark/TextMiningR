@@ -16,5 +16,5 @@ This repository is the beginner's collection of methods for analyzing texts in s
 
 ## First lesson 
 7/11/2019
-- https://github.com/johnypark/TextMiningR/blob/master/FirstLesson.md
+- https://github.com/johnypark/TextMiningR/wiki/First-Lesson
 - Issue only getting 20 entries of journal titles, but want to get all. 
