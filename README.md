@@ -13,3 +13,6 @@ This repository is the beginner's collection of methods for analyzing texts in s
 
 ## Libraries 
 - rcrossref https://github.com/ropensci/rcrossref
+
+## First lesson 
+
