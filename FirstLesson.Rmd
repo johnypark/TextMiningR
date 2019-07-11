@@ -1,0 +1,46 @@
+---
+title: "First lesson."
+author: "John Park"
+date: "July 11, 2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(rcrossref)
+library(jsonlite)
+```
+
+## Get metadata from journal 
+
+This is the first tutorial about using crossref API for getting text data from literatures. CrossRef API <https://github.com/CrossRef/rest-api-doc>.
+
+
+```{r}
+## example of work retrieving from jouranl 'landscape ecology'
+all.lands.ecol<-cr_works(filter=c(issn='15729761-09212973'))
+all.lands.ecol.json<-fromJSON(all.lands.ecol)
+```
+using crossref api: the command is,
+https://api.crossref.org/works?facet=license:*&filter=issn:15729761-09212973
+
+result is the same for crossref api and rcrossref. 
+
+I have digged this for an hour, but not sure how to list the data in this format I want:
+
+id |title | year | citation 
+
+the result
+
+```{r}
+all.lands.ecol$data$title
+```
+
+Only gives the title of 20 article, whereas 
+
+```{r}
+all.lands.ecol$meta
+```
+
+Gives total search results of 2374 journals. It must have something to do with items_per_page entry, which is 20. I just need to figure out how to fetch the data, I guess.
+
