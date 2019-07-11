@@ -19,7 +19,7 @@ This is the first tutorial about using crossref API for getting text data from l
 ```{r}
 ## example of work retrieving from jouranl 'landscape ecology'
 all.lands.ecol<-cr_works(filter=c(issn='15729761-09212973'))
-all.lands.ecol.json<-fromJSON(all.lands.ecol)
+
 ```
 using crossref api: the command is,
 https://api.crossref.org/works?facet=license:*&filter=issn:15729761-09212973
