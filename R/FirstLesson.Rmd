@@ -18,7 +18,8 @@ This is the first tutorial about using crossref API for getting text data from l
 
 ```{r}
 ## example of work retrieving from jouranl 'landscape ecology'
-all.lands.ecol<-cr_works(filter=c(issn='15729761-09212973'))
+issn.target='15729761-09212973'
+DownPubs=cr_works(filter=c(issn=issn.target))
 
 ```
 using crossref api: the command is,
@@ -26,21 +27,18 @@ https://api.crossref.org/works?facet=license:*&filter=issn:15729761-09212973
 
 result is the same for crossref api and rcrossref. 
 
-I have digged this for an hour, but not sure how to list the data in this format I want:
-
-id |title | year | citation 
-
-the result
-
+Since cr_works only takes first 20 dat points, set offset and do recurrent download based on the total number of publications found in the journal.  
 ```{r}
-all.lands.ecol$data$title
+n_pages <- ceiling(DownPubs$meta$total_results / DownPubs$meta$items_per_page)
+
+ls.pubs<-list()
+for (i in 1:n_pages){
+   n_line <- (i - 1)*20 + 1
+  ls.pubs[[i]] <- cr_works(filter = c(issn=issn.target), offset = n_line)$data 
+}
+ls.pubs<-do.call("rbind",ls.pubs)
+ls.pubs
 ```
 
-Only gives the title of 20 article, whereas 
 
-```{r}
-all.lands.ecol$meta
-```
-
-Gives total search results of 2374 journals. It must have something to do with items_per_page entry, which is 20. I just need to figure out how to fetch the data, I guess.
 
