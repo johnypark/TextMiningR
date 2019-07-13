@@ -20,7 +20,7 @@ This is the first tutorial about using crossref API for getting text data from l
 
 ```{r}
 ## example of work retrieving from jouranl 'landscape ecology'
-issn.target='15729761-09212973'
+issn.target='2072-4292'#'15729761-09212973'
 DownPubs=cr_works(filter=c(issn=issn.target))
 
 ```
@@ -54,5 +54,9 @@ s<-as.String(pubs_title)
 sent_token_annotator<-Maxent_Sent_Token_Annotator()
 word_token_annotator<-Maxent_Word_Token_Annotator()
 a<-annotate(s,list(sent_token_annotator,word_token_annotator))
-
+writeLines(pubs_title, tf <- tempfile())
+cnlp_init_tokenizers()
+anno <- cnlp_annotate(tf)
+cnlp_get_token(anno) # doesnt get annotated, spacy req. (python)
+cnlp_init_spacy()
 ```
