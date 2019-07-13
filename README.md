@@ -5,6 +5,8 @@ This repository is the beginner's collection of methods for analyzing texts in s
  
 - Text mining with R 
 - openNLP: https://www.youtube.com/watch?v=RggCAXBe6BA
+- cleanNLP: https://arxiv.org/ftp/arxiv/papers/1703/1703.09570.pdf
+    -dependency: reticulate, spacy; req. spacy installed /usr/bin/python, but directory is missing. cause conda? (7/12/2019)
 
 ## Particularly intesting questions
 ### Manuscript submission 
