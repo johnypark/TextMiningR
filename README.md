@@ -4,6 +4,7 @@ This repository is the beginner's collection of methods for analyzing texts in s
   https://www.theoj.org/joss-papers/joss.00774/10.21105.joss.00774.pdf
  
 - Text mining with R 
+- openNLP: https://www.youtube.com/watch?v=RggCAXBe6BA
 
 ## Particularly intesting questions
 ### Manuscript submission 
