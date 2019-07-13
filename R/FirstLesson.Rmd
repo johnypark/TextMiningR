@@ -32,10 +32,10 @@ result is the same for crossref api and rcrossref.
 Since cr_works only takes first 20 data points, set offset and do recurrent download based on the total number of publications found in the journal.  
 ```{r}
 n_pages <- ceiling(DownPubs$meta$total_results / DownPubs$meta$items_per_page)
-
-ls.pubs<-c(1:n_pages)%>%lapply(.,function(x){ n_line <- (x - 1)*20 + 1;
+myfunc<-function(x){ n_line <- (x - 1)*20 + 1;
 return( cr_works(filter = c(issn=issn.target), offset = n_line)$data )
-})
+}
+ls.pubs<-c(1:n_pages)%>%lapply(.,FUN=myfunc)
   
 for (i in 1:n_pages){
   if(is.null(ls.pubs[[i]])==FALSE){
@@ -46,5 +46,13 @@ ls.pubs<-do.call("rbind",ls.pubs)
 ls.pubs
 ```
 
+Need slam, slam needs R>3.4.0
 
+```{r}
+pubs_title<-paste(ls.pubs$title, collapse = " ")
+s<-as.String(pubs_title)
+sent_token_annotator<-Maxent_Sent_Token_Annotator()
+word_token_annotator<-Maxent_Word_Token_Annotator()
+a<-annotate(s,list(sent_token_annotator,word_token_annotator))
 
+```
