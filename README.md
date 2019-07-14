@@ -27,3 +27,4 @@ This repository is the beginner's collection of methods for analyzing texts in s
 ## Tokenization
 Tokenization is a concept in natural language processing, to elementarize text data into various categories that the text consist of.
 - about:reader?url=http%3A%2F%2Fblog.kaggle.com%2F2017%2F08%2F25%2Fdata-science-101-getting-started-in-nlp-tokenization-tutorial%2F
+- https://cran.r-project.org/web/packages/tokenizers/vignettes/introduction-to-tokenizers.html
