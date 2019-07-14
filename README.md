@@ -32,3 +32,4 @@ Tokenization is a concept in natural language processing, to elementarize text d
 - https://cran.r-project.org/web/packages/Matrix/index.html
 - https://stackoverflow.com/questions/42512918/how-to-suppress-the-verbose-from-createdtm-in-the-textminer-r-package?rq=1
 - http://www.biasedestimates.com/
+- https://en.wikipedia.org/wiki/Topic_model
